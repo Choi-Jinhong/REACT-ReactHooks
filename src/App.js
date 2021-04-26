@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import reducer, { initialState, ADD, DEL, COMPLETE } from "./reducer";
+import reducer, { initialState, ADD, DEL, COMPLETE, UNCOMPLETE } from "./reducer";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -53,7 +53,7 @@ function App() {
                   DELETE
                 </button>
                 <button
-                  onClick={() => dispatch({ type: DEL, payload: toDo.id })}
+                  onClick={() => dispatch({ type: UNCOMPLETE, payload: toDo.id })}
                 >
                   UNCOMPLETE
                 </button>
