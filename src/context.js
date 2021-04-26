@@ -8,6 +8,9 @@ const Lang = ({ defaultLang, children, translations }) => {
     if (lang === defaultLang) {
       return text;
     }
+    else {
+      return translations[lang][text];
+    }
   };
   return (
     <LangContext.Provider value={{ setLang, t: hyperTranslate }}>
@@ -16,7 +19,7 @@ const Lang = ({ defaultLang, children, translations }) => {
   );
 };
 
-export const useSetLang = (lang) => {
+export const useSetLang = () => {
   const { setLang } = useContext(LangContext);
   return setLang;
 };
