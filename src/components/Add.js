@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "./context";
+import { useDispatch } from "../context";
+import { ADD } from "../actions";
 
-export default () => {
+const Add = () => {
   const [newToDo, setNewToDo] = useState("");
   const dispatch = useDispatch();
 
@@ -29,3 +30,5 @@ export default () => {
     </form>
   </>;
 };
+
+export default Add;
