@@ -18,8 +18,8 @@ const Add = () => {
     } = e;
     setNewToDo(value);
   };
-  <>
-    <h1>Add to do</h1>
+
+  return (
     <form onSubmit={onSubmit}>
       <input
         value={newToDo}
@@ -28,7 +28,7 @@ const Add = () => {
         onChange={onChange}
       />
     </form>
-  </>;
+  );
 };
 
 export default Add;

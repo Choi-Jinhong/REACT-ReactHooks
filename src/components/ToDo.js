@@ -11,9 +11,11 @@ const ToDo = ({ text, id, isCompleted }) => {
         DELETE
       </button>
       <button
-        onClick={() => dispatch({ type: isCompleted ? UNCOMPLETE : COMPLETE })}
+        onClick={() =>
+          dispatch({ type: isCompleted ? UNCOMPLETE : COMPLETE, payload: id })
+        }
       >
-        {isCompleted ? "COMPLETE" : "UNCOMPLETE"}
+        {isCompleted ? "UNCOMPLETE" : "COMPLETE"}
       </button>
     </li>
   );
